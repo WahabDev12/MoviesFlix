@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+    outline: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.movie-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+img {
+    pointer-events: none;
 }
 
-.App-link {
-  color: #61dafb;
+.movie_card {
+    padding: 0 !important;
+    width: 15rem;
+    margin: 14px;
+    border-radius: 10px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie_card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 20rem;
+}
+
+.movie_info {
+    color: #5e5c5c;
+}
+
+.movie_info i {
+    font-size: 20px;
+}
+
+.card-title {
+    width: 80%;
+}
+
+.play_button {
+    background-color: #ff3d49;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    right: 20px;
+    bottom: 111px;
+    font-size: 27px;
+    padding-left: 21px;
+    padding-top: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.navbar {
+    /* background-color: #302f2c; */
+    background-color: #282828;
+    box-shadow: 0 0 5px black;
+    border-color: #333;
+    outline: none;
+
+}
+
+.navbar>a {
+    color: #FC5342;
+    font-size: 30px;
+}
+
+
+/* SEARCH BAR*/
+body {
+    /* background: #292826; */
+    background: #1F1F1F;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 70rem;
+    padding: 10px;
+    margin: 0px auto;
+
+}
+
+input[type="search"] {
+    -webkit-appearance: none !important;
+    background-clip: padding-box;
+    background-color: white;
+    vertical-align: middle;
+    border-radius: 0.25rem;
+    border: 1px solid #e0e0e5;
+    font-size: 1rem;
+    width: 100%;
+    line-height: 2;
+    padding: 1rem 1.25rem;
+    -webkit-transition: border-color 0.2s;
+    -moz-transition: border-color 0.2s;
+    transition: border-color 0.2s;
+}
+
+input[type="search"]:focus {
+    transition: all 0.5s;
+    box-shadow: 0 0 10px #f9d442b9;
+    border-color: #f9d342;
+    outline: none;
+}
+
+form.search-form {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: center;
+    margin-bottom: 0;
+}
+
+input.search-field {
+    margin-bottom: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: center;
+    height: 51px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+input.search-submit {
+    height: 51px;
+    margin: 0;
+    padding: 1rem 1.3rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    font-size: 1rem;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px #f9d442b9;
+    border-color: #f9d342;
+    outline: none;
+    cursor: pointer;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.button {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1.15;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    background: #f9d342;
+    color: #292826;
+    border: 1px solid transparent;
+    vertical-align: middle;
+    text-shadow: none;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+    transition: all 0.5s;
+    box-shadow: 0 0 10px #f9d442b9;
+    border-color: #f9d342;
+    outline: none;
+    cursor: pointer;
 }
