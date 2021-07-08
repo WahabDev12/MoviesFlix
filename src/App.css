@@ -8,6 +8,17 @@
     outline: none;
 }
 
+body {
+    overflow-x: hidden;
+
+}
+
+.trending {
+    color: white;
+    margin-left: 2.2rem;
+    margin-top: 0.5em;
+}
+
 img {
     -webkit-user-drag: none;
     -moz-user-drag: none;
@@ -31,6 +42,8 @@ img {
     margin: 14px;
     border-radius: 10px;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.5 ease;
+
 }
 
 .movie_card img {
@@ -41,6 +54,10 @@ img {
 
 .movie_info {
     color: #5e5c5c;
+}
+
+.search-div {
+    margin-top: 2rem;
 }
 
 .movie_info i {
@@ -64,10 +81,10 @@ img {
     padding-top: 16px;
     color: #FFFFFF;
     cursor: pointer;
+    margin-bottom: 3.2px;
 }
 
 .navbar {
-    /* background-color: #302f2c; */
     background-color: #282828;
     box-shadow: 0 0 5px black;
     border-color: #333;
@@ -75,15 +92,51 @@ img {
 
 }
 
-.navbar>a {
+.navbar-brand:hover {
+    color: tomato;
+    cursor: pointer;
+}
+
+.auth {
+    display: flex;
+    float: right;
+    width: 250px;
+}
+
+.movie_card:hover {
+    transform: scale(1.05);
+
+}
+
+.login {
+    color: white;
+    margin-right: 60px;
+    text-decoration: none;
+}
+
+.signup {
+    color: white;
+    text-decoration: none;
+}
+
+.login:hover {
+    color: tomato;
+}
+
+.signup:hover {
+    color: tomato;
+}
+
+
+.navbar-brand {
     color: #FC5342;
     font-size: 30px;
+    font-weight: bold;
 }
 
 
 /* SEARCH BAR*/
 body {
-    /* background: #292826; */
     background: #1F1F1F;
 }
 
