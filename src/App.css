@@ -19,7 +19,7 @@ body {
     margin-top: 0.5em;
 }
 
-img {
+.img-path {
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
@@ -30,9 +30,10 @@ img {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-bottom: 30px;
 }
 
-img {
+.img-path {
     pointer-events: none;
 }
 
@@ -46,7 +47,7 @@ img {
 
 }
 
-.movie_card img {
+.img-path {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     height: 20rem;
@@ -73,6 +74,7 @@ img {
     position: absolute;
     width: 60px;
     height: 60px;
+    display: none;
     border-radius: 50%;
     right: 20px;
     bottom: 111px;
@@ -83,6 +85,8 @@ img {
     cursor: pointer;
     margin-bottom: 3.2px;
 }
+
+
 
 .navbar {
     background-color: #282828;
@@ -97,11 +101,7 @@ img {
     cursor: pointer;
 }
 
-.auth {
-    display: flex;
-    float: right;
-    width: 250px;
-}
+
 
 .movie_card:hover {
     transform: scale(1.05);
@@ -110,12 +110,15 @@ img {
 
 .login {
     color: white;
-    margin-right: 60px;
+    float: right;
+    padding: 15px;
     text-decoration: none;
 }
 
 .signup {
     color: white;
+    float: right;
+    padding: 15px;
     text-decoration: none;
 }
 
@@ -249,4 +252,22 @@ input.search-submit {
     border-color: #f9d342;
     outline: none;
     cursor: pointer;
+}
+
+@media screen and (max-width:800px) {
+    .trending {
+        text-align: center;
+    }
+
+    .movie-cards {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .movie_card {
+        width: 16.5rem;
+    }
+
 }

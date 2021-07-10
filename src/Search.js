@@ -3,14 +3,16 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import MovieList from "./MovieList";
 import Trending from "./Trending";
+import Details from "./Details";
 
 const SearchBar = () => {
 
     const [query,setQuery] = useState("");
     const [movies,setMovies] = useState([]);
+    const [isSearching,setIsSearching] = useState(false);
     const searchURL = `https://api.themoviedb.org/3/search/movie?api_key=8c34b7bbcfa2e36acc84e76631d21031&language=en-US&query=${query}&page=1&include_adult=false`
-    const trendingURL = `https://api.themoviedb.org/3/trending/movie/day?api_key=8c34b7bbcfa2e36acc84e76631d21031&language=en-US&page=1&include_adult=false`
-
+    const trendingURL = `https://api.themoviedb.org/3/movie/popular?api_key=8c34b7bbcfa2e36acc84e76631d21031&language=en-US&page=1&include_adult=false&include_video=true`
+     
     var search = {
         method: 'GET',
         url: searchURL,
@@ -33,9 +35,9 @@ const SearchBar = () => {
     const handleSearchMovies = async (e)=>{
         e.preventDefault();
         await axios.request(search).then((response) => {
-            console.log(response.data.results);
             const movies = response.data.results;
-            return setMovies(movies)
+            setIsSearching(true);
+            return setMovies(movies); 
           }).catch((error)=> {
             console.error(error.message);
           });
@@ -44,9 +46,9 @@ const SearchBar = () => {
 
     useEffect(async () => {
       await axios.request(trending).then((response) => {
-        console.log(response.data.results);
-        const movies = response.data.results;
-        return setMovies(movies)
+        const movies =  response.data.results;
+        setIsSearching(false);
+        return setMovies(movies) 
       }).catch((error)=> {
         console.error(error.message);
       });
@@ -76,19 +78,21 @@ const SearchBar = () => {
   </div>
 
         </div>
-        <h2 className="trending">Latest Movies</h2>
+{  !isSearching &&  <h2 className="trending">Latest Movies</h2> }
+{  isSearching &&  <h2 className="trending">Search Results for &quot;{query}&quot;</h2> }
 
-        <div style={{display:"flex",flexDirecction:"row"}} className="movie-cards">
+{ isSearching && <div style={{display:"flex",flexDirecction:"row",flexWrap:"wrap"}} className="movie-cards" >
   {movies && movies.filter((movie) => movie.poster_path).map((movie) => (
             <MovieList {...movie} key={movie.id} />
           ))}
-        </div>
+    </div> }
 
-        <div style={{display:"flex",flexDirecction:"row",flexWrap:"wrap"}} className="movie-cards">
+{ !isSearching &&  <div style={{display:"flex",flexDirecction:"row",flexWrap:"wrap"}} className="movie-cards">
   {movies && movies.filter((movie) => movie.poster_path || movie.title).map((movie) => (
             <Trending {...movie} key={movie.id} />
           ))}
-        </div>
+        </div> }
+
         </>
     );
 }

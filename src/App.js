@@ -1,20 +1,20 @@
 import "./App.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay,faStar } from '@fortawesome/free-solid-svg-icons'
-import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
-import MovieList from "./MovieList";
-import SearchBar from "./Search";
-import Navbar from "./Navbar";
 import "./App.css";
-import Trending from "./Trending";
+import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
+import Details from "./Details";
+import Home from "./Home";
+
 const App = () => {
     return (
 		<>
         <div classNameName="App">
-	       <Navbar />
-		   <SearchBar />
-		   {/* <MovieList /> */}
-           <Trending />
+            <Router>
+            <Switch>
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/details/:id" component={Details} />
+           </Switch>
+           </Router>
+	
        </div>
 </>
 
