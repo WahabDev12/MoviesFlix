@@ -2,7 +2,7 @@ const Navbar = () => {
     return (  
         <div className="navbar-div">
     <nav className="navbar">
-            <a style={{paddingLeft:"30px"}} className="navbar-brand" href="/home" >
+            <a style={{paddingLeft:"30px"}} className="navbar-brand" href="/" >
             MoviesFlix
             </a>
             <div className="auth">
