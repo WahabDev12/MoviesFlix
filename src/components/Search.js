@@ -1,9 +1,8 @@
-import "./App.css";
+import "../App.css";
 import { useState,useEffect } from "react";
 import axios from "axios";
 import MovieList from "./MovieList";
 import Trending from "./Trending";
-import Details from "./Details";
 
 const SearchBar = () => {
 
