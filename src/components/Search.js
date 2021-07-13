@@ -60,7 +60,11 @@ const SearchBar = () => {
         <div className="search-div">
             <div className="wrapper">
     <div className="container">
-      <form onSubmit={handleSearchMovies} role="search" method="get" className="search-form form" action="">
+      <form
+      onSubmit={handleSearchMovies} 
+      role="search" method="get" 
+      className="search-form form"
+      action="">
         <label>
             <span className="screen-reader-text">Search for...</span>
             <input
